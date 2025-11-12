@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIYANTRAK - AI Policy Simulation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>NIYANTRAK</h2>
+                <span class="nav-subtitle">AI Policy Simulation</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#demo" class="nav-link">Live Demo</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="demo" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">NIYANTRAK</h1>
+                    <p class="hero-subtitle">New-Age AI Solutions for Government Policy Analysis</p>
+                    <p class="hero-description">
+                        AI-based policy simulation system capable of analyzing proposed government policies 
+                        and predicting their potential economic, social, and environmental outcomes
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#demo" class="btn btn-primary">Try Live Demo</a>
+                        <a href="#team" class="btn btn-secondary">Meet the Team</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="element element-1"><i class="fas fa-brain"></i></div>
+                        <div class="element element-2"><i class="fas fa-chart-line"></i></div>
+                        <div class="element element-3"><i class="fas fa-balance-scale"></i></div>
+                        <div class="element element-4"><i class="fas fa-globe"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chatbot-demo" class="section">
+            <div class="container">
+                <h2 class="section-title">Try NIYANTRAK Live Demo</h2>
+                <p class="section-subtitle">Experience AI-powered policy analysis in real-time</p>
+                
+                <!-- Integrated Chatbot Container -->
+                <div class="chatbot-main-container">
+                    <div class="chatbot-header">
+                        <div class="bot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="bot-info">
+                            <h3>NIYANTRAK AI Assistant</h3>
+                            <p class="status">🟢 Ready to analyze policies</p>
+                        </div>
+                    </div>
+
+                    <div class="chatbot-body">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message bot-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>Hello! I'm NIYANTRAK, your AI Policy Analysis Assistant. I can help you simulate and analyze government policies using advanced AI models.</p>
+                                    <p>Try asking me things like:</p>
+                                    <div class="quick-actions">
+                                        <button class="quick-btn" onclick="useQuickExample('tax')">
+                                            <i class="fas fa-coins"></i>
+                                            "Increase corporate tax by 5%"
+                                        </button>
+                                        <button class="quick-btn" onclick="useQuickExample('healthcare')">
+                                            <i class="fas fa-heartbeat"></i>
+                                            "Implement universal healthcare"
+                                        </button>
+                                        <button class="quick-btn" onclick="useQuickExample('environment')">
+                                            <i class="fas fa-leaf"></i>
+                                            "Add $50 carbon tax per ton"
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="typing-content">
+                                <div class="typing-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="typing-text">NIYANTRAK is analyzing your policy...</span>
+                            </div>
+                        </div>
+
+                        <div class="chat-input-container">
+                            <div class="chat-input-wrapper">
+                                <textarea 
+                                    id="chatInput" 
+                                    placeholder="Describe a policy you'd like me to analyze (e.g., 'Increase minimum wage by 15%')"
+                                    rows="1"
+                                ></textarea>
+                                <button class="send-btn" onclick="sendMessage()" id="sendBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">AI-Powered Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Natural Language Understanding</h3>
+                        <p>Simply describe your policy in plain English. Our NLP system extracts key parameters and understands complex policy scenarios.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Multi-Dimensional Analysis</h3>
+                        <p>Analyze economic, social, and environmental impacts simultaneously with real-time predictions and confidence scores.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Population Behavior Simulation</h3>
+                        <p>Agent-based modeling simulates how different demographics respond to policy changes, revealing unexpected outcomes.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>AI Recommendations</h3>
+                        <p>Get intelligent suggestions for policy optimization, risk mitigation, and alternative approaches based on analysis results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="container">
+                <h2 class="section-title">Team Members</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Aman Jha</h3>
+                        <p>Team Member</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Aarav Singhal</h3>
+                        <p>Team Member</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Manan Singhal</h3>
+                        <p>Team Member</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Aarav Bansal</h3>
+                        <p>Team Member</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Harsh Kochar</h3>
+                        <p>Team Member</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NIYANTRAK</h3>
+                    <p>AI-powered policy simulation for better governance</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#problem">Problem</a></li>
+                        <li><a href="#solution">Solution</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                        <li><a href="#innovation">Innovation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NIYANTRAK Team. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
