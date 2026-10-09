@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIYANTRAK - AI Policy Analysis</title>
+    <link rel="stylesheet" href="sidebar-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span class="logo-text">NIYANTRAK</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    
+                    <a href="#templates" class="nav-item" data-section="templates">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="nav-text">Policy Templates</span>
+                    </a>
+                    
+                    <a href="#analysis" class="nav-item" data-section="analysis">
+                        <i class="fas fa-analytics"></i>
+                        <span class="nav-text">Analysis History</span>
+                    </a>
+                    
+                    <a href="#recent" class="nav-item" data-section="recent">
+                        <i class="fas fa-clock"></i>
+                        <span class="nav-text">Recent Chats</span>
+                    </a>
+                    
+                    <a href="#settings" class="nav-item" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-info">
+                        <span class="profile-name">Profile</span>
+                        <span class="profile-role">Policy Analyst</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="content-section active">
+                <header class="content-header">
+                    <h1>NIYANTRAK Dashboard</h1>
+                    <p>AI-powered policy simulation and analysis platform</p>
+                </header>
+
+                <!-- <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>AI Analysis</h3>
+                            <p>Advanced policy simulation using ML, Agent-Based Modeling, and System Dynamics</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Impact Assessment</h3>
+                            <p>Economic, social, and environmental outcome predictions</p>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Smart Recommendations</h3>
+                            <p>AI-generated policy optimization suggestions</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Population Modeling</h3>
+                            <p>Agent-based simulation of citizen behavior</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Integrated Chatbot -->
+                <div class="chatbot-section">
+                    <h2>Policy Analysis Chatbot</h2>
+                    <div class="chatbot-main-container">
+                        <div class="chatbot-header">
+                            <div class="bot-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="bot-info">
+                                <h3>NIYANTRAK AI Assistant</h3>
+                                <p class="status">🟢 Ready to analyze policies</p>
+                            </div>
+                        </div>
+
+                        <div class="chatbot-body">
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="message bot-message">
+                                    <div class="message-avatar">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="message-content">
+                                        <p>Hello! I'm NIYANTRAK, your AI Policy Analysis Assistant. I can help you simulate and analyze government policies using advanced AI models.</p>
+                                        <div class="quick-actions">
+                                            <button class="quick-btn" onclick="useQuickExample('tax')">
+                                                <i class="fas fa-coins"></i>
+                                                "Increase corporate tax by 5%"
+                                            </button>
+                                            <button class="quick-btn" onclick="useQuickExample('healthcare')">
+                                                <i class="fas fa-heartbeat"></i>
+                                                "Implement universal healthcare"
+                                            </button>
+                                            <button class="quick-btn" onclick="useQuickExample('environment')">
+                                                <i class="fas fa-leaf"></i>
+                                                "Add $50 carbon tax per ton"
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="typing-content">
+                                    <div class="typing-dots">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <span class="typing-text">NIYANTRAK is analyzing your policy...</span>
+                                </div>
+                            </div>
+
+                            <div class="chat-input-container">
+                                <div class="chat-input-wrapper">
+                                    <textarea 
+                                        id="chatInput" 
+                                        placeholder="Describe a policy you'd like me to analyze (e.g., 'Increase minimum wage by 15%')"
+                                        rows="1"
+                                    ></textarea>
+                                    <button class="send-btn" onclick="sendMessage()" id="sendBtn">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Templates Section -->
+            <div id="templates" class="content-section">
+                <header class="content-header">
+                    <h1>Policy Templates</h1>
+                    <p>Pre-built policy scenarios for quick analysis</p>
+                </header>
+
+                <div class="templates-grid">
+                    <div class="template-category">
+                        <h3><i class="fas fa-coins"></i> Economic Policies</h3>
+                        <div class="template-items">
+                            <button class="template-item" onclick="useTemplate('tax-increase')">
+                                <h4>Corporate Tax Increase</h4>
+                                <p>Increase corporate tax rate by 5% to fund infrastructure</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('minimum-wage')">
+                                <h4>Minimum Wage Adjustment</h4>
+                                <p>Raise minimum wage by 15% over 2 years</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('stimulus')">
+                                <h4>Economic Stimulus Package</h4>
+                                <p>$500B stimulus package for economic recovery</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="template-category">
+                        <h3><i class="fas fa-heartbeat"></i> Healthcare Policies</h3>
+                        <div class="template-items">
+                            <button class="template-item" onclick="useTemplate('universal-healthcare')">
+                                <h4>Universal Healthcare</h4>
+                                <p>Implement universal healthcare coverage for all citizens</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('prescription-drugs')">
+                                <h4>Prescription Drug Price Control</h4>
+                                <p>Cap prescription drug prices at 200% of manufacturing cost</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('mental-health')">
+                                <h4>Mental Health Initiative</h4>
+                                <p>Increase mental health funding by 50%</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="template-category">
+                        <h3><i class="fas fa-leaf"></i> Environmental Policies</h3>
+                        <div class="template-items">
+                            <button class="template-item" onclick="useTemplate('carbon-tax')">
+                                <h4>Carbon Tax Implementation</h4>
+                                <p>Implement $50 per ton carbon tax on emissions</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('renewable-energy')">
+                                <h4>Renewable Energy Mandate</h4>
+                                <p>Require 50% renewable energy by 2030</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('electric-vehicles')">
+                                <h4>Electric Vehicle Incentives</h4>
+                                <p>$10,000 tax credit for electric vehicle purchases</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="template-category">
+                        <h3><i class="fas fa-graduation-cap"></i> Education Policies</h3>
+                        <div class="template-items">
+                            <button class="template-item" onclick="useTemplate('free-tuition')">
+                                <h4>Free College Tuition</h4>
+                                <p>Make public university tuition free for all students</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('teacher-pay')">
+                                <h4>Teacher Salary Increase</h4>
+                                <p>Increase teacher salaries by 20% nationwide</p>
+                            </button>
+                            <button class="template-item" onclick="useTemplate('student-debt')">
+                                <h4>Student Loan Forgiveness</h4>
+                                <p>Forgive up to $50,000 in student loan debt</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Chats Section -->
+            <div id="recent" class="content-section">
+                <header class="content-header">
+                    <h1>Recent Chats</h1>
+                    <p>Your previous policy analysis conversations</p>
+                </header>
+
+                <div class="recent-chats-list">
+                    <div class="chat-item">
+                        <div class="chat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="chat-info">
+                            <h4>Corporate Tax Analysis</h4>
+                            <p>Analyzed 5% corporate tax increase impact</p>
+                            <span class="chat-time">2 hours ago</span>
+                        </div>
+                        <button class="chat-action" onclick="loadChat('tax-analysis-1')">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="chat-info">
+                            <h4>Healthcare Policy Simulation</h4>
+                            <p>Universal healthcare implementation study</p>
+                            <span class="chat-time">1 day ago</span>
+                        </div>
+                        <button class="chat-action" onclick="loadChat('healthcare-1')">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="chat-info">
+                            <h4>Carbon Tax Impact Assessment</h4>
+                            <p>Environmental and economic effects analysis</p>
+                            <span class="chat-time">3 days ago</span>
+                        </div>
+                        <button class="chat-action" onclick="loadChat('carbon-tax-1')">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other sections (analysis, settings) can be added here -->
+        </div>
+    </div>
+
+    <script src="sidebar.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
